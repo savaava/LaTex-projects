@@ -1,0 +1,69 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[top=1.6cm, bottom=1.6cm, left=2cm, right=2cm]{geometry}
+\usepackage{listings}
+\usepackage{xcolor} % Per personalizzare i colori
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{multicol}
+\setlength{\columnsep}{20pt} % Distanza tra le colonne
+
+\lstset{
+	language=Java,
+    basicstyle=\ttfamily\small,   % Stile base (monospaziato)
+	keywordstyle=\color{blue},    % Colore delle parole chiave
+	commentstyle=\color{gray},    % Colore dei commenti
+	stringstyle=\color{red},      % Colore delle stringhe
+	numbers=left,                 % Numerazione delle righe
+	numberstyle=\tiny,            % Stile dei numeri di riga
+	frame=single,                 % Cornice intorno al codice
+	breaklines=true,              % Divisione automatica delle righe lunghe
+	tabsize=4,                    % Dimensione del tabulatore
+	showspaces=false,             % Non mostra spazi visibili
+	showstringspaces=false        % Non mostra spazi nelle stringhe
+}
+
+
+\title{Prove}
+\author{Sava}
+\date{\today}
+
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+
+	\newpage
+	\section{listing di codice java}
+	\begin{lstlisting}[language=Java]
+public class HelloWorld {
+	public static void main(String[] args) {
+		System.out.println("Hello,  World!");
+	}
+}
+	\end{lstlisting}	
+	
+\begin{multicols}{2}
+	\centering
+	\fbox{\includegraphics[width=0.3\textwidth]{images/example-image}}
+	\captionof{figure}{immagine con una cornice semplice.}
+	\label{fig:example1}
+	
+	testo casuale	
+	\vspace{10cm}\\testo casuale
+	
+	\columnbreak
+	
+	testo casuale
+	
+	\fcolorbox{red}{green}{\includegraphics[width=0.3\textwidth]{images/example-image}}
+	\captionof{figure}{immagine con una cornice verde e rossa}
+	\label{fig:example2}
+\end{multicols}
+	testo casuale \ref{fig:example1}
+\end{document}
+
+
+
+
+
+
