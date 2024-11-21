@@ -1,7 +1,22 @@
 \documentclass[12pt, a4paper]{article}
+
+% ******************************** PACKAGE ********************************
+\usepackage{hyperref}
 \usepackage[top=1.6cm, bottom=1.6cm, left=2cm, right=2cm]{geometry}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{enumitem} % per \begin{itemize}[noitemsep,topsep=0pt]
+\usepackage{multirow}
+
+% ******************************** SETUP ********************************
+\hypersetup{
+	linktocpage,
+	colorlinks=false, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=blue,  %choose some color if you want links to stand out
+}
 
 \lstset{
 	language=Java,
@@ -18,22 +33,26 @@
 	showstringspaces=false        % Non mostra spazi nelle stringhe
 }
 
-
+% ******************************** MAIN PAGE INFO ********************************
 \title{Sintassi e Funzionalità}
 \author{Sava}
 \date{\today}
 
+% ******************************** DOCUMENTO ********************************
 \begin{document}
 	\maketitle
 	\tableofcontents
 	
-	\newpage
+	
+	
+	\newpage	
 	\section{Listing di codici}
 	Si deve importare usepackage {listings}
 	e lstset{} per modificare il linguaggio
 	\subsection{Matlab}
 	
 	\subsection{java}
+	\hypertarget{Sava target}{Sono l'hyper target}
 	\begin{lstlisting}[language=Java]
 public class HelloWorld {
 	public static void main(String[] args) {
@@ -42,15 +61,65 @@ public class HelloWorld {
 }
 	\end{lstlisting}	
 	
-	\newpage
-	\section{Layout e geometria}
-	\subsection{multicolonna}
-	\subsection{}
+	
 	
 	\newpage
-	\section{tabelle}
-	\begin{tabbing}
-		
-	\end{tabbing}
+	\section{Layout - geometria - box}
+	\subsection{Multicolonna}	
 	
+	
+	\subsection{Tcolorbox - Bullets}
+	\begin{tcolorbox}
+		Semplice tcolorbox.
+	\end{tcolorbox}
+	\begin{tcolorbox}[colback=red!5!white,colframe=red!50!black,title=Tcolorbox speciale]
+		tcolorbox
+		\begin{itemize}[noitemsep,topsep=0pt]
+			\item con sfondo del box 5\% rosso e 95\% bianco
+			\item con sfondo del frame 50\% rosso e 50\% nero
+		\end{itemize}
+	\end{tcolorbox}
+	
+	\subsection{tabelle}
+	Utilizza il sito web \textit{\url{https://www.tablesgenerator.com/}} per costruire la tabella manualmente e ottenrne il rispettivo codice \LaTeX
+	\begin{table}[h]
+		\begin{tabular}{|l|l|l|}
+			\hline
+			a\_00 & a\_01 & a\_02 \\ \hline
+			a\_10 & a\_11 & a\_12 \\ \hline
+			a\_20 & a\_21 & a\_22 \\ \hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[h]
+		\begin{tabular}{|c|cc|c|}
+			\hline
+			a\_00                        & \multicolumn{2}{c|}{doppio testo}  & a\_02 \\ \hline
+			\multirow{2}{*}{doppia riga} & \multicolumn{1}{c|}{a\_11} & a\_12 & a\_12 \\ \cline{2-4} 
+			& \multicolumn{1}{c|}{a\_21} & a\_22 & a\_22 \\ \hline
+			a\_20                        & \multicolumn{1}{c|}{a\_21} & a\_22 & a\_22 \\ \hline
+		\end{tabular}
+	\end{table}
+	\begin{table}[!ht]
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{cella} & cella & cella \\ \hline
+			\textbf{cella} & cella & cella \\ \hline
+			\textbf{cella} & cella & cella \\ \hline
+		\end{tabular}
+		\caption{ciao sono la caption}
+		\label{lbl_table3}
+	\end{table}
+	
+	
+	
+	\newpage
+	\section{Riferimenti}
+	\subsection{hypertarget - hyperlink}
+	\hyperlink{Sava target}{link text all'indice (puntiamo a hypertarget)}
+	\subsection{url - href}
+	\begin{itemize}[itemsep=1pt,topsep=0pt]
+		\item \url{https://www.tablesgenerator.com/}
+		\item \textit{\href{https://www.tablesgenerator.com/}{Link alla pagina web del generatore delle tabelle}}
+	\end{itemize}
 \end{document}
