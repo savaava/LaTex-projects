@@ -1,0 +1,56 @@
+\documentclass[12pt, a4paper]{article}
+
+% ******************************** PACKAGE ********************************
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% ******************************** SETUP ********************************
+\hypersetup{
+	hidelinks,
+	linktocpage,
+	colorlinks=false, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	%linkcolor=blue,  %choose some color if you want links to stand out
+}
+
+% ******************************** MAIN PAGE INFO ********************************
+\title{Applicazione Software di una Rubrica}
+\author{Andrea Savastano 
+	\\ Annamaria Scermino
+	\\ Alessandro Monte 
+	\\ Francesco Musto}
+\date{\today}
+
+% ******************************** DOCUMENTO ********************************
+\begin{document}
+	\fancyhf{}
+	\fancyhead[R]{page: \thepage}
+	\thispagestyle{fancy}
+	
+	\maketitle
+	\newpage
+	\tableofcontents 
+	\listoffigures
+	
+	\newpage
+	\section*{Descrizione introduttiva}
+	\addcontentsline{toc}{section}{Descrizione introduttiva}
+	Si vuole realizzare un software destinato a gestire un insieme di contatti, associando ad ognuno di essi le informazioni personali quali nome, cognome, numero di telefono, e-mail.
+	\vspace{.2cm}\\Si rende disponibile un'interfaccia grafica che permette all'utente di gestire le funzionalità offerte dal sistema.
+	
+	\newpage
+	% Configurazione dell'intestazione
+	\fancyhf{} % Resetta intestazioni e piè di pagina
+	\fancyhead[L]{\nouppercase{\leftmark}} % Testata sinistra: sezione corrente
+	\fancyhead[R]{page: \thepage} % Testata destra: numero di pagina
+	\section{Ingegneria dei Requisiti - SRS}
+	\input{SRS.tex}
+	
+	
+\end{document}
