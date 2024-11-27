@@ -1,57 +1,54 @@
 \subsection{Requisiti Funzionali}
-\newcounter{IFcounter}
-\newcommand{\IFitem}{\addtocounter{IFcounter}{1}IF-\theIFcounter}
-	\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Funzionalità individuali IF}]
-	\begin{itemize}[itemsep=2pt, topsep=0pt, label=\textbf{\IFitem}]
-		\item \textbf{Visualizzazione in ordine alfabetico}
-		\\I contatti sono sempre visualizzati in ordine alfabetico, ordinando per cognome e nome.
-		\\Si offre
-		\\Anche usufruendo della visualizzazione per tag l’ordine dei contatti è sempre alfabetico (vedi IF-9).
+	\begin{tcolorbox}[breakable, colback=white,colframe=black!80!white,title=\textbf{Funzionalità individuali IF}]
+	\begin{itemize}[itemsep=2pt, topsep=0pt]
+		\item[\textbf{IF-1}] \textbf{Visualizzazione in ordine alfabetico}
+		\\I contatti sono sempre visualizzati in ordine alfabetico, ordinandoli per cognome e nome.
+		\\Si offre la possibilità di poter scegliere, cliccando sull’icona dell’imbuto \includegraphics[height=0.4cm]{images/imbuto_icona.jpeg}, tra l’ordinamento A-Z oppure Z-A.
+		\\Anche usufruendo della visualizzazione per Tag l’ordine dei contatti è sempre alfabetico (vedi IF-9).
 		
-		\item \textbf{Ricerca del contatto}
-		\\L’utente può cercare il contatto inserendo nella barra di ricerca una sottostringa del nome o del cognome del contatto desiderato.
-		\\Verranno visualizzati i contatti che rispettano il requisito di ricerca.
+		\item[\textbf{IF-2}] \textbf{Ricerca del contatto}
+		\\L’utente può cercare il contatto desiderato inserendo nella casella di ricerca una sottostringa del nome o del cognome del contatto desiderato.
+		\\Verranno visualizzati, secondo l’ordine alfabetico stabilito in IF-1, i contatti che rispettano il requisito di ricerca.
 		
-		\item \textbf{Ricerca per numero di telefono o mail}
-		\\L’utente può cercare il contatto inserendo nella barra di ricerca un suffisso dei numeri di telefono o una sottostringa della mail associati al contatto desiderato. 
-		\\Verranno visualizzati i contatti che rispettano il requisito di ricerca. 
+		\item[\textbf{IF-3}] \textbf{Ricerca per numero di telefono o mail}
+		\\L’utente può cercare il contatto desiderato inserendo nella casella di ricerca un suffisso del numero di telefono o una sottostringa della mail associati al contatto. 
+		\\Verranno visualizzati, secondo l’ordine alfabetico stabilito in IF-1, i contatti che rispettano il requisito di ricerca.		
 		
-		\item \textbf{Aggiunta del contatto}
-		\\Cliccando sul simbolo “+” compare nella sezione a destra una
+		\item[\textbf{IF-4}] \textbf{Aggiunta del contatto}
+		\\L’utente ha la possibilità di aggiungere un contatto alla sua rubrica.
+		In particolare cliccando sul simbolo “+” oppure attraverso il menù a tendina “Rubrica”, compare nella sezione a destra una
 		schermata in cui è possibile inserire i campi del contatto (definiti in 
-		DF-1).
+		DF-1, DF-2, DF-3).
 		\\Successivamente si può salvare il nuovo contatto o annullare  
-		l’operazione con i rispettivi tasti “Salva” o “Annulla”.
-		////DOPPIONI
+		l’operazione con i rispettivi pulsanti “Salva” o “Annulla”.
+		\\E’ possibile aggiungere un nuovo contatto contenente gli stessi valori dei campi di 1 o più contatti già esistenti; in particolare il nuovo contatto può avere stesso nome e/o cognome e/o numero di telefono e/o mail di un contatto già presente.		
 		
-		\item \textbf{Modifica di un contatto}
+		\item[\textbf{IF-5}] \textbf{Modifica di un contatto}
 		\\Cliccando su un contatto e premendo sul bottone “Modifica” nella sezione a destra è possibile modificare i suoi campi (definiti in DF-1). Dopo aver effettuato modifiche è possibile annullare o salvare l’operazione con i tasti “Salva” o “Annulla”.
 		
-		\item \textbf{Eliminazione di un contatto}
+		\item[\textbf{IF-6}] \textbf{Eliminazione di un contatto}
 		\\Cliccando su un contatto e premendo sul bottone “Elimina” nella sezione a destra si rimuove dalla rubrica.
 		
-		\item \textbf{Importazione contatto/i da file}
+		\item[\textbf{IF-7}] \textbf{Importazione contatto/i da file}
 		\\L’utente può scegliere, tramite la sezione del menù “File”, di importare nella rubrica i contatti da un file \texttt{.csv} o \texttt{.vCard}.
-		
-		\item \textbf{Esportazione contatto/i da file}
+	
+		\item[\textbf{IF-8}] \textbf{Esportazione contatto/i da file}
 		\\L’utente può aprire il menù a tendina “File” e decidere di esportare 
 		tutti i contatti oppure quelli associati ad un particolare tag selezionato 
-		da una lista che uscirà al momento dell’esportazione 
+		da una lista che uscirà al momento dell’esportazione.
 		\\L’utente può scegliere di esportare i contatti in un file .csv oppure 
 		.vCard e specificare il nome del file. 
 		
-		\item \textbf{Visualizzazione per tag}
-		\\L’utente cliccando sull’icona dell’imbuto \includegraphics[height=0.4cm]{images/WhatsApp Image 2024-11-22 at 16.28.56.jpeg} sceglie uno dei tag che comporta la visualizzazione dei soli contatti associati al tag selezionato.
+		\item[\textbf{IF-9}] \textbf{Visualizzazione per tag}
+		\\L’utente cliccando sull’icona dell’imbuto \includegraphics[height=0.4cm]{images/imbuto_icona.jpeg} sceglie uno dei tag che comporta la visualizzazione dei soli contatti associati al tag selezionato.
 		\\La visualizzazione è sempre in ordine alfabetico (vedi IF-1).
 		
 	\end{itemize}
 \end{tcolorbox}
 
-\newcounter{DFcounter}
-\newcommand{\DFitem}{\addtocounter{DFcounter}{1}DF-\theDFcounter}
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Esigenze dei dati e informazioni DF}]
-	\begin{itemize}[itemsep=2pt, topsep=0pt, label=\textbf{\DFitem}]
-		\item \textbf{Campi del contatto}
+	\begin{itemize}[itemsep=2pt, topsep=0pt]
+		\item[\textbf{DF-1}] \textbf{Campi del contatto}
 		\\Per ogni contatto bisogna conservare i seguenti dati:
 		\begin{itemize}[noitemsep, topsep=0pt, label=$\bullet$]
 			\item cognome e/o nome
@@ -61,43 +58,39 @@
 		\end{itemize}
 		Tali dati possono essere aggiunti in fase di creazione del contatto e modificati in qualsiasi momento.
 		
-		\item \textbf{Categorizzazione contatto}
+		\item[\textbf{DF-2}] \textbf{Categorizzazione contatto}
 		\\L’utente può aggiungere facoltativamente un tag a piacere (ad esempio preferiti, famiglia, lavoro, …) ad ogni contatto in fase di aggiunta/modifica del contatto.
 		\\Un tag è una particolare proprietà che si può associare ad 1 o più contatti.
 		C’è un menù a tendina che mostra tutti i tag inseriti dall’utente, e consente di aggiungerne o di rimuoverne altri. 
 		\\Per la visualizzazione dei contatti appartenenti ai tag vedi IF-9.
 		
-		\item \textbf{Immagine contatto}
+		\item[\textbf{DF-3}] \textbf{Immagine contatto}
 		\\Ad ogni contatto è associata come immagine una sagoma grigia che vedrà nella visione dettagliata del contatto. Ma in fase di aggiunta/modifica di un contatto, l’utente può aggiungere un’immagine personalizzata, la quale può essere selezionata da quelle suggerite dall’applicazione stessa oppure importarne una dall’esterno.
 		
-		\item \textbf{Salvataggio in locale}
+		\item[\textbf{DF-4}] \textbf{Salvataggio in locale}
 		\\Salvataggio in locale dei contatti inseriti in rubrica. Tale salvataggio è quello di default se non viene specificata la preferenza di usare un database (vedi IS-1).
 		
 	\end{itemize}
 \end{tcolorbox}
 
-\newcounter{UIcounter}
-\newcommand{\UIitem}{\addtocounter{UIcounter}{1}UI-\theUIcounter}
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Interfaccia Utente UI}]
-	\begin{itemize}[itemsep=2pt, topsep=0pt, label=\textbf{\UIitem}]
-		\item \textbf{Visualizzazione specifica del contatto}
+	\begin{itemize}[itemsep=2pt, topsep=0pt]
+		\item[\textbf{UI-1}] \textbf{Visualizzazione specifica del contatto}
 		\\Dopo aver selezionato dalla rubrica un contatto, l’utente vedrà nella sezione a destra la visualizzazione dettagliata del contatto scelto. In questa sezione è visibile, oltre al nome e/o il cognome, anche i numeri di telefono, le email e i tag associati al contatto.
 		
-		\item \textbf{Avere interfaccia utente di tipo grafico} 
+		\item[\textbf{UI-2}] \textbf{Avere interfaccia utente di tipo grafico} 
 		\\Tramite l’utilizzo di JavaFX l’utente interagisce con il programma tramite interfaccia grafica, permettendone un utilizzo facilitato e maggiormente intuitivo.
 		
-		\item \textbf{Barra laterale di navigazione}
+		\item[\textbf{UI-3}] \textbf{Barra laterale di navigazione}
 		\\Nella schermata di visualizzazione dei contatti, vi è sul bordo sinistro, disposto verticalmente, una barra di navigazione che contiene lettere in ordine alfabetico. L’utente cliccando su una lettera, l’elenco salta ai contatti con questa lettera iniziale, velocizzando così lo scorrimento della rubrica.
 		\\Le lettere contenute in tale barra sono le iniziali degli unici contatti presenti nell’elenco (sia nella visualizzazione complessiva che per tag).
 		
 	\end{itemize}
 \end{tcolorbox}
 
-\newcounter{IScounter}
-\newcommand{\ISitem}{\addtocounter{IScounter}{1}IS-\theIScounter}
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Interfacce con sistemi esterni IS}]
-	\begin{itemize}[itemsep=2pt, topsep=0pt, label=\textbf{\ISitem}]
-		\item \textbf{Sincronizzazione con database}
+	\begin{itemize}[itemsep=2pt, topsep=0pt]
+		\item[\textbf{IS-1}] \textbf{Sincronizzazione con database}
 		\\Nelle impostazioni dell’applicazione (cliccando su "File" e poi su "Configurazione") è possibile esprimere la propria preferenza riguardo la possibilità di salvare la propria rubrica su un database esterno, fornendo il link. 
 		\\In questo caso, il salvataggio dati non avverrà più in locale, come avviene di default, (tramite file \texttt{.bin}) ma sul database (vedi DF-4).
 	\end{itemize}
@@ -105,15 +98,13 @@
 
 
 \subsection{Requisiti Non Funzionali}
-\newcounter{FCcounter}
-\newcommand{\FCitem}{\addtocounter{FCcounter}{1}FC-\theFCcounter}
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Vincoli FC}]
-	\begin{itemize}[itemsep=2pt, topsep=0pt, label=\textbf{\FCitem}]
-		\item \textbf{Usabilità}
+	\begin{itemize}[itemsep=2pt, topsep=0pt]
+		\item[\textbf{FC-1}] \textbf{Usabilità}
 		\\L’utente deve poter utilizzare la rubrica in maniera intuitiva,
 		fornendogli un’interfaccia grafica invitante.
 		
-		\item \textbf{Velocità di risposta}
+		\item[\textbf{FC-2}] \textbf{Velocità di risposta}
 		\\L’utente deve poter effettuare le operazioni fornite dalla rubrica in tempi ragionevolmente brevi.		
 	\end{itemize}
 \end{tcolorbox}
@@ -121,62 +112,235 @@
 \subsection{Tabella di categorizzazione dei requisiti}
 
 \newpage
-\subsection{Casi d'Uso}
+\subsection{Casi d'Uso formato testuale}
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C0 - Aggiungere contatto}]
-\textbf{Attore partecipante}:
-\\\textbf{Precondizioni}: 
-\\\textbf{Postcondizioni}:
+\textbf{Attore partecipante}: Utente
+\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
+\\\textbf{Postcondizioni}: Nella rubrica viene aggiunto un contatto.
 \\\textbf{Flusso di eventi normale}:
 \begin{enumerate}[noitemsep, topsep=0pt]
-	\item Utente clicca il pulsante “+”;
-	\item Utente inserisce il nome e/o il cognome;
-	\item Utente inserisce i numeri di telefono e/o le email ;
-	\item Utente clicca il pulsante “Salva”;
-	\item Il sistema aggiunge il contatto;
+\item Utente clicca il pulsante “+”;
+\item Utente inserisce il nome e/o il cognome;
+\item Utente inserisce da 0 a 3 numeri di telefono;
+\item 	Utente inserisce da 0 a 3 mail ;
+\item 	Utente inserisce da 0 a 3 Tag;
+\item 	Utente inserisce un’immagine;
+\item 	Utente salva l’operazione;
+\item 	Il sistema aggiunge il contatto.
 \end{enumerate}
 \textbf{Flusso di eventi alternativo}:
 \begin{itemize}[noitemsep, topsep=0pt]
-	\item[3.a] Utente clicca il pulsante “Annulla”.
+	\item[1a. ] Utente clicca sul pulsante “Rubrica”;
+	\item[1a.1] Utente crea il contatto;
+	\item[6a. ] Utente non inserisce alcuna immagine, quindi rimane quella di default;
+	\item[7a. ] Utente annulla l’operazione;
+	\item[7a.1] L’esecuzione riprende dal passo 1;
 \end{itemize}
 \end{tcolorbox}
 
-\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C1 - Rimuovere contatto}]
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C1 - Eliminare contatto}]
 	\textbf{Attore partecipante}: Utente
-	\\\textbf{Precondizioni}: L’utente ha deciso il contatto da eliminare
-	\\\textbf{Postcondizioni}: Viene rimosso dalla rubrica il contatto selezionato
+	\\\textbf{Precondizioni}: Esiste almeno un contatto nella rubrica.
+	\\\textbf{Postcondizioni}: Viene rimosso dalla rubrica il contatto selezionato.
 	\\\textbf{Flusso di eventi normale}:
 	\begin{enumerate}[noitemsep, topsep=0pt]
-		\item Utente seleziona il contatto;
-		\item Utente clicca il tasto “Elimina”;
-		\item Il sistema rimuove il contatto;		
-	\end{enumerate}
-	\textbf{Flusso di eventi alternativo}: /
-\end{tcolorbox}
-
-\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C2}]
-	\textbf{Attore partecipante}:
-	\\\textbf{Precondizioni}: 
-	\\\textbf{Postcondizioni}:
-	\\\textbf{Flusso di eventi normale}:
-	\begin{enumerate}[noitemsep, topsep=0pt]
-		\item 
+\item	Utente seleziona il contatto da eliminare;
+\item	Utente clicca il pulsante “Elimina”;
+\item	Utente conferma l’operazione dalla schermata di conferma;
+\item	Il sistema rimuove il contatto.
 	\end{enumerate}
 	\textbf{Flusso di eventi alternativo}:
 	\begin{itemize}[noitemsep, topsep=0pt]
-		\item[]
+		\item[3a. ] Utente annulla l’operazione dalla schermata di conferma;
+		\item[3a.1] L’esecuzione riprende dal passo 1;
 	\end{itemize}
 \end{tcolorbox}
 
-\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C3}]
-	\textbf{Attore partecipante}:
-	\\\textbf{Precondizioni}: 
-	\\\textbf{Postcondizioni}:
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C2 - Modificare contatto}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Esiste almeno un contatto nella rubrica.
+	\\\textbf{Postcondizioni}: Viene modificato il contatto selezionato.
 	\\\textbf{Flusso di eventi normale}:
 	\begin{enumerate}[noitemsep, topsep=0pt]
-		\item 
+\item Utente seleziona il contatto da modificare;
+\item Utente clicca il pulsante “Modifica”; 
+\item Utente modifica uno o più campi del contatto;
+\item Utente salva l’operazione;
+\item Il sistema modifica il contatto.		
 	\end{enumerate}
 	\textbf{Flusso di eventi alternativo}:
 	\begin{itemize}[noitemsep, topsep=0pt]
-		\item[]
+		\item[4a. ] Utente annulla l’operazione;
+		\item[4a.1] L’esecuzione riprende dal passo 1;
 	\end{itemize}
 \end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C3 - Cercare contatto}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
+	\\\textbf{Postcondizioni}: I contatti che rispettano il criterio di ricerca vengono visualizzati.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente scrive nella casella di ricerca una sottostringa del nome o del cognome del contatto da cercare;
+		\item Il sistema visualizza l’insieme dei contatti che rispetta il criterio di ricerca.		
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[1a.] Utente scrive nella casella di ricerca un prefisso del numero di telefono del contatto da cercare;
+		\item[1b.] Utente scrive nella casella di ricerca una sottostringa della mail del contatto da cercare;
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C4 - Importare rubrica}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente possiede un file \texttt{.csv} o \texttt{.vCard}
+	\\\textbf{Postcondizioni}: Vengono caricati nella rubrica dell’utente i contatti contenuti nel file fornito.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente clicca il menù a tendina “File”;
+		\item Utente clicca il pulsante “Importa”;
+		\item Utente fornisce il file con estensione \texttt{.csv} o \texttt{.vCard};
+		\item Utente seleziona file;
+		\item Utente importa il file;
+		\item Gli eventuali contatti presenti nel file vengono aggiunti alla rubrica dell’utente.		
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[3a. ] Utente chiude il pop-up;
+		\item[3a.1] L’esecuzione riprende dal passo 1;
+		\item[4a. ] Utente fornisce un file con contenuto non interpretabile dalla rubrica;
+		\item[4a.1] L’esecuzione riprende dal passo 3;
+		\item[4b. ] Utente decide di non fornire un file;
+		\item[4b.1] L’esecuzione riprende dal passo 3;
+		\item[5a. ] Utente chiude il pop-up;
+		\item[5a.1] L’esecuzione riprende dal passo 1;
+		
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C5 - Esportare rubrica}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
+	\\\textbf{Postcondizioni}: Viene prodotto un file \texttt{.csv} o \texttt{.vCard} con i contatti selezionati.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente clicca il menù a tendina “File”;
+		\item Utente clicca il pulsante “Esporta”;
+		\item Utente sceglie la categoria dei contatti da esportare
+		\item Utente sceglie l’estensione del file tra l’opzione \texttt{.csv} e \texttt{.vCard};
+		\item Utente sceglie il percorso;
+ 		\item Utente sceglie il percorso dove salvare il file;
+		\item Utente inserisce il nome del file da lui desiderato;
+		\item Utente salva l’operazione;
+		\item Il sistema produce il file con l’estensione scelta.		
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[3a. ] Utente chiude il pop-up;
+		\item[3a.1] L’esecuzione riprende al passo 1;
+		\item[4a. ] Utente chiude il pop-up;
+		\item[4a.1] L’esecuzione riprende al passo 1;
+		\item[5a. ] Utente chiude il pop-up;
+		\item[5a.1] L’esecuzione riprende al passo 1;
+		\item[6a. ] Utente decide di non fornire il percorso;
+		\item[6a.1] L’esecuzione riprende al passo 3;
+		\item[7a. ] Utente chiude il pop-up;
+		\item[7a.1] L’esecuzione riprende al passo 1;
+		\item[8a. ] Utente chiude il pop-up;
+		\item[8a.1] L’esecuzione riprende al passo 1;		
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C6 - Visualizzare rubrica}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
+	\\\textbf{Postcondizioni}: Visualizzare i contatti della rubrica.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente visualizza tutti gli eventuali contatti per cognome in ordine alfabetico.
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[1a. ] Utente clicca il pulsante dell’imbuto \includegraphics[height=0.4cm]{images/imbuto_icona.jpeg};
+		\item[1a.1]	Utente sceglie 1 o più Tag tra quelli presenti;
+		\item[1a.2]	Utente visualizza i contatti associati al/ai Tag selezionato/i.
+		\item[1b. ] Utente clicca il pulsante dell’imbuto \includegraphics[height=0.4cm]{images/imbuto_icona.jpeg};
+		\item[1b.1]	Utente sceglie l’ordine alfabetico inverso;
+		\item[1b.2]	Utente visualizza i contatti in ordine alfabetico inverso.
+		\item[1c. ] Utente clicca il pulsante dell’imbuto \includegraphics[height=0.4cm]{images/imbuto_icona.jpeg};
+		\item[1c.1]	Utente sceglie l’ordine per nome;
+		\item[1c.2]	Utente visualizza i contatti in ordine per nome.
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C7 - Salvare rubrica}]
+	\textbf{Attore partecipante}: Sistema
+	\\\textbf{Precondizioni}: Utente ha effettuato una modifica. 
+	\\\textbf{Postcondizioni}: Il Sistema salva la modifica.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente effettua una qualsiasi modifica alla sua rubrica (aggiunge contatto, elimina Tag, importa un file di una rubrica, …); 
+		\item La modifica viene salvata in locale in un file binario.
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[2a.] La modifica viene salvata sul database.
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C8 - Aggiungere Tag}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
+	\\\textbf{Postcondizioni}: 1 o più Tag sono stati aggiunti.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente clicca il menù a tendina “Rubrica”;
+	\item	Utente clicca il pulsante “Gestisci Tag”;
+	\item	Utente aggiunge un nuovo Tag;
+	\item	Utente salva l’operazione.		
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[4a. ] Utente annulla l’operazione;
+		\item[4a.1] L’esecuzione riprende al passo 1;		
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C9 - Modificare Tag}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta. 
+	\\\textbf{Postcondizioni}: 1 o più Tag sono stati modificati.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente clicca il menù a tendina “Rubrica”;
+		\item Utente clicca il pulsante “Gestisci Tag”;
+	\item 	Utente modifica un Tag precedentemente aggiunto;
+	\item 	Utente salva l’operazione.		
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[4a. ] Utente annulla l’operazione;
+		\item[4a.1] L’esecuzione riprende al passo 1;		
+	\end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C10 - Eliminare Tag}]
+	\textbf{Attore partecipante}: Utente
+	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
+	\\\textbf{Postcondizioni}: 1 o più Tag sono stati eliminati.
+	\\\textbf{Flusso di eventi normale}:
+	\begin{enumerate}[noitemsep, topsep=0pt]
+		\item Utente clicca il menù a tendina “Rubrica”;
+	\item	Utente clicca il pulsante “Gestisci Tag”;
+	\item	Utente seleziona il Tag che vuole eliminare;
+	\item	Utente conferma l’operazione dalla schermata di conferma;
+	\item	Il sistema elimina il Tag.
+	\end{enumerate}
+	\textbf{Flusso di eventi alternativo}:
+	\begin{itemize}[noitemsep, topsep=0pt]
+		\item[4a. ] Utente annulla l’operazione dalla schermata di conferma;
+		\item[4a.1] L’esecuzione riprende dal passo 1;		
+	\end{itemize}
+\end{tcolorbox}
+
+\subsection{Diagramma dei Casi d'Uso}

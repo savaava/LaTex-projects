@@ -5,7 +5,7 @@
 \usepackage{lipsum}
 \usepackage{xcolor}
 \usepackage{enumitem}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -30,7 +30,7 @@
 % ******************************** DOCUMENTO ********************************
 \begin{document}
 	\fancyhf{}
-	\fancyhead[R]{page: \thepage}
+	\fancyhead[R]{page \thepage}
 	\thispagestyle{fancy}
 	
 	\maketitle
@@ -44,11 +44,15 @@
 	Si vuole realizzare un software destinato a gestire un insieme di contatti, associando ad ognuno di essi le informazioni personali quali nome, cognome, numero di telefono, e-mail.
 	\vspace{.2cm}\\Si rende disponibile un'interfaccia grafica che permette all'utente di usufruire delle funzionalità offerte dal sistema.
 	
+	\section*{Mockup}
+	\addcontentsline{toc}{section}{Mockup}
+	Si inseriscono alcuni mockup dell'interfaccia grafica del software per scopo illustrativo, finalizzati ad una stesura dei requisiti più dettagliata e ad un supporto alla comprensione dei requisiti.
+	
 	\newpage
 	% Configurazione dell'intestazione
 	\fancyhf{} % Resetta intestazioni e piè di pagina
 	\fancyhead[L]{\nouppercase{\leftmark}} % Testata sinistra: sezione corrente
-	\fancyhead[R]{page: \thepage} % Testata destra: numero di pagina
+	\fancyhead[R]{page \thepage} % Testata destra: numero di pagina
 	\section{Ingegneria dei Requisiti - SRS}
 	\input{SRS.tex}
 	
