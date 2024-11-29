@@ -1,22 +1,29 @@
 \documentclass[12pt, a4paper]{article}
 
 % ******************************** PACKAGE ********************************
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{lipsum}
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage[most]{tcolorbox}
-\usepackage{hyperref}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\usepackage[colorlinks=true]{hyperref}
 
 % ******************************** SETUP ********************************
-\hypersetup{
-	hidelinks,
-	linktocpage,
-	colorlinks=false, %set true if you want colored links
-	linktoc=all,     %set to all if you want both sections and subsections linked
-	%linkcolor=blue,  %choose some color if you want links to stand out
+% Comando per disattivare il colore dei link
+\newcommand{\disablelinkcolor}{%
+	\hypersetup{linkcolor=black}%
+}
+
+% Comando per riattivare il colore dei link
+\newcommand{\enablelinkcolor}{
+	\hypersetup{
+	    %hidelinks,
+	    linkcolor=blue
+		%linkbordercolor=blue,
+		%pdfborderstyle={/S/U/W 1} % Bordo sottolineato (stile underline)
+	}
 }
 
 % ******************************** MAIN PAGE INFO ********************************
@@ -35,8 +42,11 @@
 	
 	\maketitle
 	\newpage
+\disablelinkcolor
 	\tableofcontents 
 	\listoffigures
+	
+\enablelinkcolor % Riattiva i link sottolineati
 	
 	\newpage
 	\section*{Descrizione introduttiva}
@@ -47,6 +57,13 @@
 	\section*{Mockup}
 	\addcontentsline{toc}{section}{Mockup}
 	Si inseriscono alcuni mockup dell'interfaccia grafica del software per scopo illustrativo, finalizzati ad una stesura dei requisiti più dettagliata e ad un supporto alla comprensione dei requisiti.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\linewidth]{images/mockup.png}
+	\caption{Mockup}
+	\label{mockup}			
+\end{figure}
+	
 	
 	\newpage
 	% Configurazione dell'intestazione
