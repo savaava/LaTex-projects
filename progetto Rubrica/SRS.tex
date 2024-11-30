@@ -1,13 +1,11 @@
 % ******************************** REQUISITI ********************************
 \subsection{Tabella di categorizzazione dei requisiti}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{images/Categorizzazione requisiti.jpg}
-	\caption{Tabella di categorizzazione dei requisiti}
-	\label{categorizzazione_dei_requisiti}	
-\end{figure}
+\begin{adjustbox}{width=.8\paperwidth, height=.8\paperheight, center}
+	\includegraphics{images/Categorizzazione requisiti.jpg}
+\end{adjustbox}
+\captionof{figure}{Tabella di categorizzazione dei requisiti}
+\label{categorizzazione_dei_requisiti}
 
-%\vspace{2cm}
 \newpage
 \subsection{Requisiti Funzionali}
 	\begin{tcolorbox}[breakable, colback=white,colframe=black!80!white,title=\textbf{Funzionalità individuali IF}]
@@ -40,12 +38,12 @@
 		\\L’utente ha la possibilità di eliminare un contatto dalla sua rubrica. 
 		\\In particolare cliccando su un contatto e premendo sul pulsante “Elimina”, l’utente potrà confermare o meno l’operazione attraverso una schermata di conferma.
 		
-		\item[\textbf{IF-7}] \textbf{Importazione contatto/i da file}
+		\item[\textbf{IF-7}] \textbf{Importazione della rubrica da file}
 		\\L’utente può scegliere, tramite la sezione del menù a tendina “File”, di importare una rubrica con 0 o più contatti da un file \texttt{.csv} o \texttt{.vCard}. 
 		\\Gli eventuali contatti presenti nella rubrica importata verranno aggiunti alla rubrica dell’utente. 
 		\\L’utente può interrompere l’operazione in qualsiasi momento.
 	
-		\item[\textbf{IF-8}] \textbf{Esportazione contatto/i da file}
+		\item[\textbf{IF-8}] \textbf{Esportazione della rubrica su file}
 		\\L’utente può scegliere, tramite la sezione del menù a tendina “File”, di esportare la sua rubrica, includendo tutti i contatti oppure quelli associati ad un particolare Tag selezionato da una lista che uscirà al momento dell’esportazione.
 		\\L’utente può scegliere di esportare la rubrica in un file \texttt{.csv} o \texttt{.vCard} e specificare il nome del file. 
 		
@@ -97,7 +95,7 @@
 		
 		\item[\textbf{UI-3}] \textbf{Barra laterale di navigazione}
 		\\Nella schermata di visualizzazione dei contatti vi è sul bordo sinistro, disposto verticalmente, una barra di navigazione che contiene lettere in ordine alfabetico. L’utente, cliccando su una lettera fa saltare l’elenco ai contatti con questa lettera iniziale, velocizzando così lo scorrimento della rubrica.
-		\\Le lettere contenute in tale barra sono le iniziali degli unici contatti presenti nell’elenco (sia nella visualizzazione complessiva che per Tag).		
+		\\Le lettere contenute in tale barra sono le iniziali degli unici contatti presenti nell’elenco (sia nella visualizzazione complessiva \hyperlink{IF-1}{IF-1} che per Tag \hyperlink{IF-9}{IF-9}).		
 	\end{itemize}
 \end{tcolorbox}
 
@@ -105,21 +103,13 @@
 	\begin{itemize}[itemsep=2pt, topsep=0pt]
 		\hypertarget{IS-1}{\item[\textbf{IS-1}]} \textbf{Sincronizzazione con database}
 		\\Cliccando sul menù a tendina "File" e poi su "Configurazione" è possibile esprimere la propria preferenza riguardo la possibilità di salvare la propria rubrica su un database esterno, fornendo il link. 
-		\\In questo caso, il salvataggio dati non avverrà più in locale, come avviene di default, (tramite file \texttt{.bin}) ma sul database (vedi \hyperlink{DF-4}{DF-4}).
+		\\In questo caso, il salvataggio dati non avverrà più in locale, come avviene di default tramite file \texttt{Data.bin} (vedi \hyperlink{DF-4}{DF-4}), ma sul database.
 	\end{itemize}
 \end{tcolorbox}
 
 
 \subsection{Requisiti Non Funzionali}
-\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Vincoli FC}]
-	\begin{itemize}[itemsep=2pt, topsep=0pt]
-		\item[\textbf{FC-1}] \textbf{Usabilità}
-		\\L’utente deve poter utilizzare la rubrica in maniera intuitiva, fornendogli un’interfaccia grafica invitante.
-		
-		\item[\textbf{FC-2}] \textbf{Velocità di risposta}
-		\\L’utente deve poter effettuare le operazioni fornite dalla rubrica in tempi ragionevolmente brevi.		
-	\end{itemize}
-\end{tcolorbox}
+Il software non prevede requisiti non funzionali
 
 
 % ******************************** CASI D'USO ********************************
