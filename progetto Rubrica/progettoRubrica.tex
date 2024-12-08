@@ -11,6 +11,10 @@
 \pagestyle{fancy}
 \usepackage[colorlinks=true]{hyperref}
 
+\usepackage{tikz}
+\usepackage{aeguill}
+\usepackage{mdframed}
+
 % ******************************** SETUP ********************************
 % Comando per disattivare il colore dei link
 \newcommand{\disablelinkcolor}{%
@@ -71,7 +75,12 @@
 	\fancyhf{} % Resetta intestazioni e piè di pagina
 	\fancyhead[L]{\nouppercase{\leftmark}} % Testata sinistra: sezione corrente
 	\fancyhead[R]{page \thepage} % Testata destra: numero di pagina
+	
 	\section{Ingegneria dei Requisiti - SRS}
 	\input{SRS.tex}
+	
+	\newpage
+	\section{Design}
+	\input{design.tex}
 	
 \end{document}

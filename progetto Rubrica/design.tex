@@ -1,0 +1,145 @@
+\subsection{Diagrammi di classi}
+I diagrammi di classi rappresentano il sistema della rubrica con le funzionalità di gestione dei contatti, dei tag, importazione/esportazione di dati, configurazioni e salvataggio dei dati in locale o su DB.
+\begin{itemize}[noitemsep, topsep=5pt]
+	\item \textbf{Contact}: Modella un contatto con attributi come nome, cognome, numeri di telefono, e-mail, immagine del profilo, e tag associati. Ha metodi per gestire i contatti, aggiungere e rimuovere numeri e e-mail, e per gestire i tag associati.
+	\item \textbf{Tag}: Modella un'etichetta associata ai contatti, con attributi come id, descrizione, e un indice statico. Include metodi per ottenere e impostare descrizioni e id, e per confrontare gli oggetti.
+	\item \textbf{AddressBook}: Contiene contatti e tag. È una classe singleton, quindi ha un'istanza unica, e gestisce il salvataggio dei dati tramite un database o la serializzazione. Ha metodi per aggiungere, rimuovere e ottenere contatti e tag, e per caricare e salvare i dati.
+	\item \textbf{MainController}: Gestisce l'interfaccia utente principale, con metodi per inizializzare i componenti dell'interfaccia, aggiungere, modificare, rimuovere contatti, per visualizzare pop-up per l'importazione/esportazione e la gestione dei tag.
+	\item \textbf{ImportPopupController}, \textbf{ExportPopupController}, \textbf{ManageTagsPopupController}, \textbf{ConfigPopupController}, \textbf{ImagePopupController}: Gestiscono i pop-up per importare/esportare contatti, gestire i tag, gestire la configurazione (link del DB) e gestire le immagini di profilo.
+	\item \textbf{ConfirmPopupController}: Gestisce anch'essa un pop-up di conferma di un'eventuale operazione di eliminazione di un contatto o di un tag richiesta dall'utente.
+	\item \textbf{Database}: Gestisce l'interazione con un database MongoDB per l'archiviazione di contatti e tag. Ha metodi per inserire, aggiornare, rimuovere, recuperare contatti e tag dal database.
+\end{itemize}
+
+\subsubsection{Livello di dettaglio basso}
+\input{diagrammiTex/DiagrammaClassiEssenziale.tex}
+\begin{figure}[h]
+	\caption{Diagramma classi essenziale}
+	\label{fig:Diagramma classi essenziale}
+\end{figure}
+\newpage
+\subsubsection{Livello di dettaglio alto}
+\input{diagrammiTex/DiagrammaClassi.tex}
+\begin{figure}[h]
+	\caption{Diagramma classi completo}
+	\label{fig:Diagramma classi completo}
+\end{figure}
+
+\newpage
+\subsection{Diagrammi di sequenza}
+Si presentano una serie di diagrammi di sequenza che descrivono alcuni casi d'uso definiti nel sistema, descrivendo le interazioni tra l'attore \textit{Utente} e gli oggetti del sistema coinvolti, al fine di soddisfare i requisiti specificati. \\
+Oltre ai casi d'uso, vengono inclusi 2 diagrammi che rappresentano flussi operativi rilevanti per la comprensione del funzionamento complessivo del sistema.
+\subsubsection{C1 - Aggiungere Contatto}
+Il seguente diagramma di sequenza illustra l'esecuzione del caso d'uso C1:
+\input{diagrammiTex/Aggiungere Contatto.tex}
+\begin{figure}[h]
+\caption{Diagramma sequenza C1 - Aggiungere Contatto}
+\label{fig:Diagramma sequenza C1 - Aggiungere Contatto}
+\end{figure}
+
+\newpage
+\subsubsection{C2 C3 - Eliminare Modificare Contatto}
+Il seguente diagramma di sequenza illustra l'esecuzione di entrambi i casi d'uso C2 e C3, tramite la sintassi \texttt{loop}, \texttt{break} e \texttt{alt}:
+\input{diagrammiTex/Eliminare Modificare Contatto.tex}
+\begin{figure}[h]
+\caption{Diagramma sequenza C2 C3 - Eliminare Modificare Contatto}
+\label{fig:Diagramma sequenza C2 C3 - Eliminare Modificare Contatto}
+\end{figure}
+
+\newpage
+\subsubsection{C5 - Importare rubrica}
+Il seguente diagramma di sequenza illustra l'esecuzione del caso d'uso C5:
+\input{diagrammiTex/Importare Rubrica.tex}
+\begin{figure}[h]
+	\caption{Diagramma sequenza C5 - Importare rubrica}
+	\label{fig:Diagramma sequenza C5 - Importare rubrica}
+\end{figure}
+
+\newpage
+\subsubsection{C6 - Esportare rubrica}
+Il seguente diagramma di sequenza illustra l'esecuzione del caso d'uso C6:
+\input{diagrammiTex/EsportareRubrica.tex}
+\begin{figure}[h]
+	\caption{Diagramma sequenza C6 - Esportare rubrica}
+	\label{fig:Diagramma sequenza C6 - Esportare rubrica}
+\end{figure}
+
+\newpage
+\subsubsection{C8 - Salvare rubrica}
+Il seguente diagramma di sequenza illustra l'esecuzione del caso d'uso C8:
+\input{diagrammiTex/Salvataggio in locale o in DB.tex}
+\begin{figure}[h]
+	\caption{Diagramma sequenza C8 - Salvare rubrica}
+	\label{fig:Diagramma sequenza C8 - Salvare rubrica}
+\end{figure}
+
+\newpage
+\subsubsection{Aggiunta DB}
+Il seguente diagramma di sequenza illustra il flusso di operazioni attraverso cui l'utente aggiunge un link a un Database, consentendo il salvataggio dei dati nel DB anziché in locale.:
+\input{diagrammiTex/Aggiunta Database.tex}
+\begin{figure}[h]
+	\caption{Diagramma sequenza Aggiunta DB}
+	\label{fig:Diagramma sequenza Aggiunta DB}
+\end{figure}
+
+\newpage
+\subsubsection{Inizializzazione rubrica}
+Il seguente diagramma di sequenza illustra il flusso di operazioni eseguito quando l'utente apre l'applicazione, durante la fase di inizializzazione, permettendogli di recuperare tutti i contatti della sessione precedente, attraverso il DB o il file \texttt{Data.bin}:
+\input{diagrammiTex/Inizializzazione Rubrica.tex}
+\begin{figure}[h]
+	\caption{Diagramma sequenza Inizializzazione rubrica}
+	\label{fig:Diagramma sequenza Inizializzazione rubrica}
+\end{figure}
+
+
+\newpage
+\subsection{Principi di buona progettazione}
+Si garantisce l'aderenza ai principi di buona progettazione del software, migliorando modularità, manutenibilità e chiarezza del sistema.
+\subsubsection{Livelli di coesione}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\linewidth]{images/Coesione classi.jpg}
+	\caption{Livelli di coesione classi}
+	\label{fig:livelli di coesione classi}
+\end{figure}
+\newpage
+\subsubsection{Livelli di accoppiamento}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.9\linewidth]{images/Accoppiamento_classi.jpg}
+	\caption{Livelli di accoppiamento classi}
+	\label{fig:livelli di accoppiamento classi}
+\end{figure}
+
+\subsubsection{Relazioni tra le Classi}
+Nel progetto si è prediletta l’associazione rispetto alla specializzazione (ereditarietà). \\
+In particolare:
+\begin{itemize}[noitemsep, topsep=5pt]
+	\item Esiste una relazione di aggregazione 1 a molti tra \textit{AddressBook} e \textit{Contact}, tra \textit{AddressBook} e \textit{Tag}.
+	\item È presente una relazione di composizione 1 a 0..1 tra \textit{AddressBook} e \textit{Database}, poiché la rubrica può prevedere il salvataggio su database o in locale.
+\end{itemize}
+
+\subsubsection{Riduzione dell’Accoppiamento}
+Per seguire il principio di riduzione dell’accoppiamento tra classi, sono state create le interfacce \textit{TagManager} e \textit{ContactManager}. \\
+Questo consente alle classi \textit{Export}, \textit{Import} e \textit{ManageTagsPopupController} di accedere solo ai metodi strettamente necessari, favorendo anche il principio di segregazione delle interfacce.\\
+Tuttavia:
+\begin{itemize}[noitemsep, topsep=5pt]
+	\item \textit{MainController} ha un riferimento diretto a \textit{AddressBook}, poiché dipende da esso per la maggior parte dei metodi, esclusi quelli relativi ai tag.
+	\item \textit{ConfigPopupController} ha anch’esso un riferimento diretto a \textit{AddressBook}, ma con un accoppiamento per timbro, dato che utilizza solo alcuni metodi.
+\end{itemize}
+\subsubsection{Relazione con l’Interfaccia Initializable}
+Tutti i controller implementano l’interfaccia \textit{Initializable}, ma nei diagrammi di classe tale relazione viene omessa per ridurre il livello di dettaglio e garantire una maggiore visibilità.
+
+\subsubsection{Livelli di dettaglio}
+Sono forniti due diagrammi di classi con livelli di dettaglio differenti:
+\begin{itemize}[noitemsep, topsep=5pt]
+	\item Diagramma con relazioni evidenziate: Mostra solo i metodi e attributi più rilevanti, evidenziando meglio le relazioni.
+	\item Diagramma completo: Descrive in dettaglio tutti gli attributi e metodi delle classi, evidenziandone più concretamente il ruolo nella realizzazione del sistema.
+\end{itemize}
+
+\subsubsection{Diagrammi di Sequenza}
+Sono forniti diagrammi di sequenza per descrivere i flussi di eventi relativi all’interazione tra l’utente e la rubrica, tra cui:
+\begin{itemize}[noitemsep, topsep=5pt]
+	\item Alcuni casi d’uso specifici (C1, C2, C3, C5, C6, C8).
+	\item L’operazione di aggiunta del database tramite link inserito dall’utente.
+	\item Lo scenario di apertura e inizializzazione della rubrica, che può avvenire attraverso il database o il file locale \texttt{Data.bin} in assenza del database.
+\end{itemize}
