@@ -10,10 +10,12 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage[colorlinks=true]{hyperref}
-
+\usepackage{multicol}
 \usepackage{tikz}
 \usepackage{aeguill}
 \usepackage{mdframed}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
 
 % ******************************** SETUP ********************************
 % Comando per disattivare il colore dei link
@@ -82,5 +84,9 @@
 	\newpage
 	\section{Design}
 	\input{design.tex}
+	
+	\newpage
+	\section{Implementazione e Testing}
+	\input{ImplementazioneTesting.tex}
 	
 \end{document}

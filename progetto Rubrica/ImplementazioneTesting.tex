@@ -1,0 +1,101 @@
+Il progetto è stato sviluppato utilizzando \texttt{JavaFX} per la realizzazione dell'interfaccia grafica, adottando una struttura modulare che organizza le classi in package specifici in base al loro ruolo all'interno del progetto. Il funzionamento del progetto, con le relative dipendente, è affidato a \texttt{Maven}.\vspace{.3cm}
+Inoltre, per garantire l'affidabilità e il corretto funzionamento delle principali classi del progetto, sono stati implementati test automatizzati utilizzando la libreria \texttt{JUnit} e i relativi metodi \texttt{assert}. Questo approccio ha consentito di identificare e risolvere diversi problemi in fase di implementazioni delle classi.
+\subsection{Diagramma dei Package}
+\begin{figure}[h]
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\input{diagrammiTex/package1.tex}
+		\caption{Diagramma package implementazione}
+		\label{fig:diagramma-package-implementazione}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\input{diagrammiTex/package2.tex}
+		\caption{Diagramma package testing}
+		\label{fig:diagramma-package-testing}
+	\end{minipage}
+\end{figure}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Package controllers}]
+	Questo Package è dedicato esclusivamente alla gestione dell'interfaccia grafica dell'applicazione. Al suo interno sono presenti classi Controller ognuna delle quali gestisce un aspetto specifico dell'interfaccia grafica, come l'esportazione (\textit{ExportPopupController}), importazione (\textit{ImportPopupController}) o schermata di conferma per l'eliminazione di un contatto o tag (\textit{ConfirmPopupController}). \\
+	Questo consente una separazione delle responsabilità, con i controller che si occupano esclusivamente della logica di interazione con l'utente.
+	\\La presenza di diverse classi, ciascuna con un compito preciso, segue il principio di singola responsabilità.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Package models}]
+	Questo Package contiene le classi che rappresentano i modelli del sistema e la logica. 
+	\\Definendo \textit{AddressBook}, \textit{Contact} e \textit{Tag} si definiscono i modelli.
+	\\Definendo le interfacce \textit{ContactManager} e \textit{TagManager} si separa la gestione dei modelli e le interazioni con questi. \\
+	Tali interfacce offrono dei metodi per \textit{ExportPopupController}, \textit{ImportPopupController} e \textit{ManageTagsPopupController} per la gestione dei contatti e dei tag.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Package services}]
+	In questo Package sono presenti le classi \textit{Converter} e \textit{Database}, che gestiscono operazioni generali come la conversione di dati e l'interazione con il database. \\
+	Tali classi si occupano del salvataggio dei dati in remoto e la trasformazione dei formati.
+	Questo riduce la duplicazione del codice e quindi migliora la manutenibilità.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{Package di test}]
+	I Package per i test sono relativi ai modelli e ai servizi e sono in un package separato. \\
+	Le classi di test AddressBookTest, ContactTest e TagTest sono associati ai rispettivi modelli, mentre ConverterTest e DatabaseTest sono dedicati ai test dei servizi.\\
+	Questo facilita l'individuazione di eventuali bug in fase di implementazione e refactoring.
+\end{tcolorbox}
+
+\newpage
+\subsection{UTC 1 - AddressBook}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-1.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-2.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-8.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-4.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-9.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-10.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-12.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-14.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/1-15.png} \end{center}
+\subsection{UTC 2 - Contact}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/2-16.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/2-17.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/2-18.png} \end{center}
+\subsection{UTC 3 - Converter}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-1.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-2.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-4.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-5.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-6.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-8.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-9.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-10.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-11.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-12.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3-13.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3.14.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3.16.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3.18.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/3.19.png} \end{center}
+\subsection{UTC 4 - Database}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.2.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.3.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.4.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.5.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.6.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.7.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.8.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.9.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.10.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4.11.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-12.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-13.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-14.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-15.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-16.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-17.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-18.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-19.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/4-20.png} \end{center}
+\subsection{UTC 5 - Tag}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/5-2.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/5-4.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/5-6.png} \end{center}
+\begin{center} \includegraphics[width=\linewidth]{images/UTC/5-7.png} \end{center}
+

@@ -39,13 +39,13 @@
 		\\In particolare cliccando su un contatto e premendo sul pulsante “Elimina”, l’utente potrà confermare o meno l’operazione attraverso una schermata di conferma.
 		
 		\item[\textbf{IF-7}] \textbf{Importazione della rubrica da file}
-		\\L’utente può scegliere, tramite la sezione del menù a tendina “File”, di importare una rubrica con 0 o più contatti da un file \texttt{.csv} o \texttt{.vCard}. 
+		\\L’utente può scegliere, tramite la sezione del menù a tendina “File”, di importare una rubrica con 0 o più contatti da un file \texttt{.csv} o \texttt{.vcf}. 
 		\\Gli eventuali contatti presenti nella rubrica importata verranno aggiunti alla rubrica dell’utente. 
 		\\L’utente può interrompere l’operazione in qualsiasi momento.
 	
 		\item[\textbf{IF-8}] \textbf{Esportazione della rubrica su file}
 		\\L’utente può scegliere, tramite la sezione del menù a tendina “File”, di esportare la sua rubrica, includendo tutti i contatti oppure quelli associati ad un particolare Tag selezionato da una lista che uscirà al momento dell’esportazione.
-		\\L’utente può scegliere di esportare la rubrica in un file \texttt{.csv} o \texttt{.vCard} e specificare il nome del file. 
+		\\L’utente può scegliere di esportare la rubrica in un file \texttt{.csv} o \texttt{.vcf} e specificare il nome del file. 
 		
 		\hypertarget{IF-9}{\item[\textbf{IF-9}]} \textbf{Visualizzazione per tag}
 		\\L’utente cliccando sull’icona dell’imbuto \includegraphics[height=0.4cm]{images/imbuto_icona.jpeg} può scegliere 1 o più Tag tra quelli presenti che comporta la visualizzazione dei soli contatti associati al/ai Tag selezionato/i.
@@ -196,13 +196,13 @@ Il software non prevede requisiti non funzionali
 
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C5 - Importare rubrica}]
 	\textbf{Attore partecipante}: Utente
-	\\\textbf{Precondizioni}: Utente possiede un file \texttt{.csv} o \texttt{.vCard}
+	\\\textbf{Precondizioni}: Utente possiede un file \texttt{.csv} o \texttt{.vcf}
 	\\\textbf{Postcondizioni}: Vengono caricati nella rubrica dell’utente i contatti contenuti nel file fornito.
 	\\\textbf{Flusso di eventi normale}:
 	\begin{enumerate}[noitemsep, topsep=0pt]
 		\item Utente clicca il menù a tendina “File”;
 		\item Utente clicca il pulsante “Importa”;
-		\item Utente fornisce il file con estensione \texttt{.csv} o \texttt{.vCard};
+		\item Utente fornisce il file con estensione \texttt{.csv} o \texttt{.vcf};
 		\item Utente seleziona il file;
 		\item Utente importa il file;	
 	\end{enumerate}
@@ -221,13 +221,13 @@ Il software non prevede requisiti non funzionali
 \begin{tcolorbox}[colback=white,colframe=black!80!white,title=\textbf{C6 - Esportare rubrica}]
 	\textbf{Attore partecipante}: Utente
 	\\\textbf{Precondizioni}: Utente ha la schermata della rubrica aperta.
-	\\\textbf{Postcondizioni}: Viene prodotto un file \texttt{.csv} o \texttt{.vCard} con i contatti selezionati.
+	\\\textbf{Postcondizioni}: Viene prodotto un file \texttt{.csv} o \texttt{.vcf} con i contatti selezionati.
 	\\\textbf{Flusso di eventi normale}:
 	\begin{enumerate}[noitemsep, topsep=0pt]
 		\item Utente clicca il menù a tendina “File”;
 		\item Utente clicca il pulsante “Esporta”;
 		\item Utente sceglie la categoria dei contatti da esportare
-		\item Utente sceglie l’estensione del file tra l’opzione \texttt{.csv} e \texttt{.vCard};
+		\item Utente sceglie l’estensione del file tra l’opzione \texttt{.csv} e \texttt{.vcf};
 		\item Utente sceglie il percorso dove salvare il file;
 		\item Utente salva l’operazione;	
 	\end{enumerate}
