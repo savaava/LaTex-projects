@@ -1,0 +1,213 @@
+\documentclass[12pt, a4paper]{article}
+
+
+% ******************************** PACKAGES ********************************
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{aeguill}
+\usepackage{adjustbox}
+\usepackage{caption}
+
+% ******************************** DOCUMENTO ********************************
+\begin{document}
+	\begin{center}
+		\section*{Simulazione Sava}
+	\end{center}
+	
+	\section{Diagramma}
+	\input{diagramma.tex}
+	
+	\vspace{-.5cm}
+	\section{Classe Evento}
+	Possiede 2 attributi accessibili solo in lettura:
+	\begin{itemize}[noitemsep, topsep=3pt]
+		\item \texttt{data}
+		\item \texttt{descrizione}
+	\end{itemize}
+	La \texttt{toString} deve stampare secondo il seguente output:
+	\begin{tcolorbox}
+		\texttt{Evento in Data: 2060-08-15 - Descrizione: D\&D\\
+		Evento in Data: 2067-02-16 - Descrizione: Festa Dakunto}
+	\end{tcolorbox}
+	Due eventi sono uguali se sono previsti nella stessa data.\\
+	Se ritenuto necessatrio è possibile aggiungere metodi o attributi.
+	
+	\section{Classe Agenda}
+	Possiede 2 attributi accessibili solo in lettura: 
+	\begin{itemize}[noitemsep, topsep=3pt]
+		\item \texttt{prprietario}
+		\item \texttt{agenda}, che aggrega una serie di eventi
+	\end{itemize}
+	L'agenda deve conservare un numero qualsiasi di eventi suddivisi in sezioni, ognuna composta al più da 4 eventi. In ciascuna sezione i 4 eventi sono diversi e sono disposti in ordine rispetto alla data. Quindi è possibile che in 2 sezioni diverse vi sia lo stesso evento (con la stessa data).
+\begin{itemize}[noitemsep, topsep=3pt]
+\item \texttt{getProprietario()}: Metodo getter per l'attributo \texttt{proprietario}
+
+\item \texttt{aggiungiEvento(Evento e)}: Rggiunge l'evengo all'agenda alla prima sezione con meno di 4 eventi. Se l'agenda è completamente vuota o tutte le sezini sono complete (hanno 4 eventi) allora se ne deve creare una nuova.\\
+L'aggiunta deve avvenire sempre in modo che nella sezione non vi siano doppioni e che l'ordine per data venga rispettato.
+
+\item \texttt{rimuoviEventi(LocalDate data)}: Rimuove dall'agenda tutti gli eventi previsti nella data specificata come parametro d'ingresso. Naturalmente si devono controllare tutte le sezioni.
+
+\item \texttt{Collection<Evento> getEventi(LocalDate data)}: Conserva in una collezione da restituire tutti gli eventi previsti nella data specificata come parametro d'ingresso. Naturalmente si devono controllare tutte le sezioni.
+
+\item \texttt{int getNumEventi()}: Restituisce il numero totale di eventi contenuti in tutte le sezioni dell'agenda.
+
+\hrule
+E' previsto un salvataggio serializzato e testuale dell'agenda. il \texttt{filename} deve sempre avere come nome il \texttt{proprietario} dell'agenda e come estensione \texttt{.ser} o \texttt{.csv}\\
+(formato: \texttt{<proprietario>.ser} o \texttt{<proprietario>.csv})
+\item \texttt{void saveOBJ(String filename)}: Salvataggio serializzato dell'agenda stessa, con \texttt{proprietario} compreso. 
+
+\item \texttt{static Agenda readOBJ(String filename)}: Restituisce un'agenda letta dal file che il metodo sopra descritto genera.
+
+\item \texttt{void saveCSV(String filename)}: Genera un file testuale col seguente formato:\\
+\texttt{data,descrizione} (un evento su ogni rigo).\\
+Esempio:\vspace{-.5cm}
+\begin{center}
+\begin{lstlisting}
+2045-01-12,Riunione con Rocco
+2029-01-24,BedWars Gis
+2029-12-18,D&D
+2043-02-15,Esercitazione ASD
+2050-08-28,D&D
+\end{lstlisting}
+\end{center}
+\vspace{-.5cm}
+
+\item \texttt{static Agenda readCSV(String filename)}: Restituisce un'agenda letta dal file che il metodo sopra descritto genera. L'agenda prodotta potrebbe avere un numero di sezioni o di eventi diverso rispetto a quella utilizzata per generare il file col metodo sopra. Questo avviene perchè c'è la possibilità che l'agenda utilizzata per generare il file col metodo sopra abbia pochi eventi per ciascuna sezione.
+
+\item \texttt{String toString()}: Deve Restituire una descrizione completa dell'agenda con questo formato:
+\small{
+\begin{lstlisting}
+Agenda completa di Gis (2 sezioni - 5 eventi)
+***** Sezione 1 *****
+Evento in Data: 2029-01-24 - Descrizione: BedWars Gis
+Evento in Data: 2029-12-18 - Descrizione: D&D
+Evento in Data: 2043-02-15 - Descrizione: Esercitazione ASD
+Evento in Data: 2045-01-12 - Descrizione: Riunione con Rocco
+***** Sezione 2 *****
+Evento in Data: 2050-08-28 - Descrizione: D&D
+\end{lstlisting}}
+\end{itemize}
+\hrule
+	Se ritenuto necessatrio è sempre possibile aggiungere metodi o attributi.
+	
+	\section{Esempio di Output}
+
+\small{
+\begin{lstlisting}
+run:
+------(main)------ Inserimento 10 eventi (metodo aggiungiEvento)
+Agenda completa di Gis (3 sezioni - 10 eventi)
+***** Sezione 1 *****
+Evento in Data: 2025-05-12 - Descrizione: Esercitazione ASD
+Evento in Data: 2052-05-04 - Descrizione: Rimpatriata coi bro
+Evento in Data: 2060-08-15 - Descrizione: D&D
+Evento in Data: 2067-02-16 - Descrizione: Festa Dakunto
+***** Sezione 2 *****
+Evento in Data: 2041-06-25 - Descrizione: Teatro Verdi
+Evento in Data: 2052-05-04 - Descrizione: Riunione Speciale
+Evento in Data: 2056-03-28 - Descrizione: Esercitazione ASD
+Evento in Data: 2059-08-09 - Descrizione: BedWars Gis
+***** Sezione 3 *****
+Evento in Data: 2030-05-31 - Descrizione: Esercitazione ASD
+Evento in Data: 2060-04-04 - Descrizione: D&D
+
+------(main)------ Rimozione evento in data 2060-08-15 (metodo rimuoviEventi)
+Agenda completa di Gis (3 sezioni - 9 eventi)
+***** Sezione 1 *****
+Evento in Data: 2025-05-12 - Descrizione: Esercitazione ASD
+Evento in Data: 2052-05-04 - Descrizione: Rimpatriata coi bro
+Evento in Data: 2067-02-16 - Descrizione: Festa Dakunto
+***** Sezione 2 *****
+Evento in Data: 2041-06-25 - Descrizione: Teatro Verdi
+Evento in Data: 2052-05-04 - Descrizione: Riunione Speciale
+Evento in Data: 2056-03-28 - Descrizione: Esercitazione ASD
+Evento in Data: 2059-08-09 - Descrizione: BedWars Gis
+***** Sezione 3 *****
+Evento in Data: 2030-05-31 - Descrizione: Esercitazione ASD
+Evento in Data: 2060-04-04 - Descrizione: D&D
+
+------(main)------ Inserimento 11 eventi (metodo aggiungiEvento)
+Agenda completa di Gis (5 sezioni - 20 eventi)
+***** Sezione 1 *****
+Evento in Data: 2025-05-12 - Descrizione: Esercitazione ASD
+Evento in Data: 2036-04-23 - Descrizione: Riunione con Rocco
+Evento in Data: 2052-05-04 - Descrizione: Rimpatriata coi bro
+Evento in Data: 2067-02-16 - Descrizione: Festa Dakunto
+***** Sezione 2 *****
+Evento in Data: 2041-06-25 - Descrizione: Teatro Verdi
+Evento in Data: 2052-05-04 - Descrizione: Riunione Speciale
+Evento in Data: 2056-03-28 - Descrizione: Esercitazione ASD
+Evento in Data: 2059-08-09 - Descrizione: BedWars Gis
+***** Sezione 3 *****
+Evento in Data: 2030-05-31 - Descrizione: Esercitazione ASD
+Evento in Data: 2050-11-13 - Descrizione: Rimpatriata coi bro
+Evento in Data: 2060-04-04 - Descrizione: D&D
+Evento in Data: 2062-06-05 - Descrizione: D&D
+***** Sezione 4 *****
+Evento in Data: 2044-04-07 - Descrizione: D&D
+Evento in Data: 2045-01-12 - Descrizione: Riunione con Rocco
+Evento in Data: 2052-04-28 - Descrizione: Teatro Verdi
+Evento in Data: 2057-02-18 - Descrizione: Esercitazione OOP
+***** Sezione 5 *****
+Evento in Data: 2029-01-24 - Descrizione: BedWars Gis
+Evento in Data: 2029-12-18 - Descrizione: D&D
+Evento in Data: 2043-02-15 - Descrizione: Esercitazione ASD
+Evento in Data: 2050-08-28 - Descrizione: D&D
+
+------(main)------ Ricerca degli eventi in data 2052-05-04 (metodo getEventi)
+[Evento in Data: 2052-05-04 - Descrizione: Rimpatriata coi bro
+, Evento in Data: 2052-05-04 - Descrizione: Riunione Speciale
+]
+
+------(main)------ Rimozione 15 eventi (metodo rimuoviEventi)
+Agenda completa di Gis (5 sezioni - 5 eventi)
+***** Sezione 1 *****
+Nessun Evento nella sezione
+***** Sezione 2 *****
+Nessun Evento nella sezione
+***** Sezione 3 *****
+Nessun Evento nella sezione
+***** Sezione 4 *****
+Evento in Data: 2045-01-12 - Descrizione: Riunione con Rocco
+***** Sezione 5 *****
+Evento in Data: 2029-01-24 - Descrizione: BedWars Gis
+Evento in Data: 2029-12-18 - Descrizione: D&D
+Evento in Data: 2043-02-15 - Descrizione: Esercitazione ASD
+Evento in Data: 2050-08-28 - Descrizione: D&D
+
+------(main)------ Scrittura dell'agenda (metodo saveOBJ)
+------(main)------ (metodo readOBJ)
+Agenda completa di Gis (5 sezioni - 5 eventi)
+***** Sezione 1 *****
+Nessun Evento nella sezione
+***** Sezione 2 *****
+Nessun Evento nella sezione
+***** Sezione 3 *****
+Nessun Evento nella sezione
+***** Sezione 4 *****
+Evento in Data: 2045-01-12 - Descrizione: Riunione con Rocco
+***** Sezione 5 *****
+Evento in Data: 2029-01-24 - Descrizione: BedWars Gis
+Evento in Data: 2029-12-18 - Descrizione: D&D
+Evento in Data: 2043-02-15 - Descrizione: Esercitazione ASD
+Evento in Data: 2050-08-28 - Descrizione: D&D
+
+------(main)------ Scrittura dell'agenda (metodo saveCSV)
+------(main)------ (metodo readCSV)
+Agenda completa di Gis (2 sezioni - 5 eventi)
+***** Sezione 1 *****
+Evento in Data: 2029-01-24 - Descrizione: BedWars Gis
+Evento in Data: 2029-12-18 - Descrizione: D&D
+Evento in Data: 2043-02-15 - Descrizione: Esercitazione ASD
+Evento in Data: 2045-01-12 - Descrizione: Riunione con Rocco
+***** Sezione 2 *****
+Evento in Data: 2050-08-28 - Descrizione: D&D
+\end{lstlisting}}
+\end{document}
